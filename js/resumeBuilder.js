@@ -11,17 +11,18 @@ var bio = {
 		},
 	"biopic": "images/face.png",
 	"welcomeMessage": "Hello",
-	"skills": ["Awesome", "Programming"],
+	"skills": ["HTML5", "JavaScript", "CSS", "Agile", "python"],
   "displayName" : function bioName () {
        var formattedHeaderName = HTMLheaderName.replace("%data%",bio.name);
        var formattedRole = HTMLheaderRole.replace("%data%",bio.role);
        var formattedPic = HTMLbioPic.replace("%data%", bio.biopic);
        var formattedWelcomeMessage = HTMLWelcomeMsg.replace("%data%", bio.welcomeMessage);
+       $('#header').append(formattedPic);
+       $('#header').append(formattedWelcomeMessage);
        $('#header').prepend(formattedRole);
        $('#header').prepend(formattedHeaderName);
       
-       $('#topContacts').append(formattedPic);
-       $('#topContacts').append(formattedWelcomeMessage);
+       
      },
   "displayContact" : function bioContact () {
        var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
@@ -31,7 +32,7 @@ var bio = {
        var formattedBlog = HTMLblog.replace("%data%", bio.contacts.blog);
        var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
        //$('#topContacts').append(HTMLcontactGeneric);
-       $('#topContacts:last').append(formattedMobile);
+       $('#topContacts:last').prepend(formattedMobile);
        $('#topContacts:last').append(formattedEmail);
        $('#topContacts:last').append(formattedTwitter);
        $('#topContacts:last').append(formattedGithub);
@@ -47,11 +48,12 @@ var HTMLWelcomeMsg = '<span class="welcome-message">%data%</span>';
 	"displaySkills" : function bioDisplay () {
         if(bio.skills.length > 0){
         $('#header').append(HTMLskillsStart);
-        var formattedSkills = HTMLskills.replace('%data%',bio.skills[0]);
+        for(var skills in bio.skills){
+        var formattedSkills = HTMLskills.replace('%data%',bio.skills[skills]);
         $('#skills').append(formattedSkills);
-        formattedSkills = HTMLskills.replace('%data%',bio.skills[1]);
-        $('#skills').append(formattedSkills);
+     
          }
+       }
 	}
 };
 
