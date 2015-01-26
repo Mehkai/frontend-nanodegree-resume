@@ -15,8 +15,13 @@ var bio = {
   "displayName" : function bioName () {
        var formattedHeaderName = HTMLheaderName.replace("%data%",bio.name);
        var formattedRole = HTMLheaderRole.replace("%data%",bio.role);
-       $('#header').append(formattedHeaderName);
-       $('#header').append(formattedRole);
+       var formattedPic = HTMLbioPic.replace("%data%", bio.biopic);
+       var formattedWelcomeMessage = HTMLWelcomeMsg.replace("%data%", bio.welcomeMessage);
+       $('#header').prepend(formattedRole);
+       $('#header').prepend(formattedHeaderName);
+      
+       $('#topContacts').append(formattedPic);
+       $('#topContacts').append(formattedWelcomeMessage);
      },
   "displayContact" : function bioContact () {
        var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
@@ -34,13 +39,6 @@ var bio = {
        $('#topContacts:last').append(formattedLocation);
 
        /*
-var HTMLcontactGeneric = '<li class="flex-item"><span class="orange-text">%contact%</span><span class="white-text">%data%</span></li>';
-var HTMLmobile = '<li class="flex-item"><span class="orange-text">mobile</span><span class="white-text">%data%</span></li>';
-var HTMLemail = '<li class="flex-item"><span class="orange-text">email</span><span class="white-text">%data%</span></li>';
-var HTMLtwitter = '<li class="flex-item"><span class="orange-text">twitter</span><span class="white-text">%data%</span></li>';
-var HTMLgithub = '<li class="flex-item"><span class="orange-text">github</span><span class="white-text">%data%</span></li>';
-var HTMLblog = '<li class="flex-item"><span class="orange-text">blog</span><span class="white-text">%data%</span></li>';
-var HTMLlocation = '<li class="flex-item"><span class="orange-text">location</span><span class="white-text">%data%</span></li>';
 
 var HTMLbioPic = '<img src="%data%" class="biopic">';
 var HTMLWelcomeMsg = '<span class="welcome-message">%data%</span>';
