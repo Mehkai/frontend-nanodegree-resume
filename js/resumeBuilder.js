@@ -36,7 +36,7 @@ var bio = {
        $('#topContacts:last').append(formattedEmail);
        $('#topContacts:last').append(formattedTwitter);
        $('#topContacts:last').append(formattedGithub);
-       $('#topContacts:last').append(formattedBlog);
+       //$('#topContacts:last').append(formattedBlog);
        $('#topContacts:last').append(formattedLocation);
 
        /*
