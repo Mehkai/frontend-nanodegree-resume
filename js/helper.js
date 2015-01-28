@@ -175,7 +175,7 @@ function initializeMap() {
     var marker = new google.maps.Marker({
       map: map,
       position: placeData.geometry.location,
-      title: name,
+      title: name + ", Click marker for more information",
       info: {
         "Denver" : "I live here and work at Sprint",
         "Flagstaff": "I finished School here at NAU, and worked for Apartmentlife",

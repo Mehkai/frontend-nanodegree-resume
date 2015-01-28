@@ -10,7 +10,7 @@ var bio = {
     "location":"Denver, CO US"
 		},
 	"biopic": "images/face.png",
-	"welcomeMessage": "Hello",
+	"welcomeMessage": "Passionate to find solutions!",
 	"skills": ["HTML5", "JavaScript", "CSS", "Agile", "python"],
   "displayName" : function bioName () {
        var formattedHeaderName = HTMLheaderName.replace("%data%",bio.name);
