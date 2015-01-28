@@ -210,20 +210,24 @@ work.display();
 
 
 
+//var name1 = bio.name;
 
-/* Function that will change the name to an international style
+
+//Function that will change the name to an international style
 function inName(name) {
-     var splitName = name.split(" ");
-     var firstName = splitName[0];
-     var lastName = splitName[1];
-     var capFirstName = firstName[0].toUpperCase() + firstName.slice(1);
-     var capLastName = lastName.toUpperCase();
-     var internationalName = capFirstName + " " + capLastName;
+  name = name.trim().split(" ");
+  
+  name[1] = name[1].toUpperCase();
+  name[0] = name[0].slice(0,1).toUpperCase() + name[0].slice(1).toLowerCase();
+
+  var internationalName = name[0] + " " + name[1];
 
      return internationalName;
 }
 
-var name1 = "carl vereen";
+$('#main').append(internationalizeButton);
+$('#mapDIV').append(googleMap);
 
-console.log(inName("carl vereen"));
-*/
+
+console.log(inName(bio.name));
+

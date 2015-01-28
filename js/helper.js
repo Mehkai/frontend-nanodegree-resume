@@ -64,7 +64,8 @@ The International Name challenge in Lesson 2 where you'll create a function that
 */
 $(document).ready(function() {
   $('button').click(function() {
-    var iName = inName() || function(){};
+
+    var iName = inName(bio.name) || function(){};
     $('#name').html(iName);
   });
 });
@@ -102,7 +103,8 @@ var map;    // declares a global map variable
 Start here! initializeMap() is called when page is loaded.
 */
 function initializeMap() {
-  var locations; }
+
+  var locations;
 
   var mapOptions = {
     disableDefaultUI: true
@@ -110,7 +112,7 @@ function initializeMap() {
 
   // This next line makes `map` a new Google Map JavaScript Object and attaches it to
   // <div id="map">, which is appended as part of an exercise late in the course.
-  map = new google.maps.Map(document.getElementById('map'), mapOptions);
+  map = new google.maps.Map(document.querySelector('#map'), mapOptions);
 
 
   /*
@@ -125,6 +127,7 @@ function initializeMap() {
     // adds the single location property from bio to the locations array
     locations.push(bio.contacts.location);
 
+
     // iterates through school locations and appends each location to
     // the locations array
     for (var school in education.schools) {
@@ -137,6 +140,7 @@ function initializeMap() {
       locations.push(work.jobs[job].location);
     }
 
+
     return locations;
   }
 
@@ -145,13 +149,14 @@ function initializeMap() {
   placeData is the object returned from search results containing information
   about a single location.
   */
-  /*function createMapMarker(placeData) {
+  function createMapMarker(placeData) {
 
     // The next lines save location data from the search result object to local variables
     var lat = placeData.geometry.location.lat();  // latitude from the place service
     var lon = placeData.geometry.location.lng();  // longitude from the place service
     var name = placeData.formatted_address;   // name of the place from the place service
     var bounds = window.mapBounds;            // current boundaries of the map window
+    
 
     // marker is an object with additional data about the pin for a single location
     var marker = new google.maps.Marker({
@@ -169,8 +174,7 @@ function initializeMap() {
 
     // hmmmm, I wonder what this is about...
     google.maps.event.addListener(marker, 'click', function() {
-      // your code goes here!
-      infoWindow.open(map,marker);
+      infoWindow.open(map, marker);
     });
 
     // this is where the pin actually gets added to the map.
@@ -186,17 +190,17 @@ function initializeMap() {
   callback(results, status) makes sure the search returned results for a location.
   If so, it creates a new map marker for that location.
   */
-  /*function callback(results, status) {
+  function callback(results, status) {
     if (status == google.maps.places.PlacesServiceStatus.OK) {
       createMapMarker(results[0]);
-    }
+      }
   }
 
   /*
   pinPoster(locations) takes in the array of locations created by locationFinder()
   and fires off Google place searches for each location
   */
-  /*function pinPoster(locations) {
+  function pinPoster(locations) {
 
     // creates a Google place search service object. PlacesService does the work of
     // actually searching for location data.
@@ -209,6 +213,7 @@ function initializeMap() {
       var request = {
         query: locations[place]
       };
+      
 
       // Actually searches the Google Maps API for location data and runs the callback
       // function with the search results after each search.
@@ -239,5 +244,5 @@ window.addEventListener('load', initializeMap);
 // and adjust map bounds
 //window.addEventListener('resize', function(e) {
   // Make sure the map bounds get updated on page resize
- //  map.fitBounds(mapBounds);
+//  map.fitBounds(mapBounds);
 //});
