@@ -82,7 +82,7 @@ var education = {
    "classes" : ["HTML/CSS", "JavaScript"]
   },
   {
-   "title" : "NanoDegree Front End Web Development",
+   "title" : "Front End Web Development",
    "name": "Tree House Island",
    "date" : 2015,
    "url" : "HTTP://www.teamtreehouse.com",
@@ -129,7 +129,7 @@ var work = {
      "title" : "Event Coordinator",
      "location" : "Flagstaff, Arizona, US",
      "dates" : "2004 - 2008",
-     "description" : "This is what I did",
+     "description" : "Event planning for 300+ unit Apartment complex, including reporting on attendance to events and retention of tennants",
      "duties" : ["Event planning for 300+ unit Apartment complex", "Monthly Status Reporting"]
    },
    {
@@ -137,7 +137,7 @@ var work = {
     "title" : "Program Project Manager",
     "location" : "Denver, Colorado, US",
     "dates" : "2008 - Current",
-    "description" : "This is what I did",
+    "description" : "Project and task management, maintaining strong attention to detail. Excellent communication and interpersonal skills, able to provide clear communication to a wide audience on procedures, projects and status. Focus on analytical/problem solving skills",
     "duties" : ["Project and task management skills", "Maintains strong attention to detail", "Strong communication and interpersonal skills", "Strong dedication to documenting processes, procedures, projects and status", "Strong analytical/problem solving skills"]
    }
    ],
@@ -165,14 +165,14 @@ var projects = {
     "title" : "ICP",
     "dates" : "Ongoing",
     "description" : "Develop a program to support compensation for sales activities",
-    "images" : "images/197x148.gif",
+    "images" : "images/p1_148x148.gif",
     "skills" : ["communication", "interpersonal"],
    },
    {
     "title" : "switch",
     "dates" : "completed success",
     "description" : "change over phone router",
-    "images" : "images/197x148.gif",
+    "images" : "images/p2_247x148.gif",
     "skills" : ["communication", "interpersonal"],
     }
    ],
