@@ -39,11 +39,6 @@ var bio = {
        //$('#topContacts:last').append(formattedBlog);
        $('#topContacts:last').append(formattedLocation);
 
-       /*
-
-var HTMLbioPic = '<img src="%data%" class="biopic">';
-var HTMLWelcomeMsg = '<span class="welcome-message">%data%</span>';
-*/
   },
 	"displaySkills" : function bioDisplay () {
         if(bio.skills.length > 0){
@@ -122,13 +117,7 @@ var education = {
     $('.education-entry:last').append(formattedTitleSchool);
     $('.education-entry:last').append(formattedOnlineDates);
     $('.education-entry:last').append(formattedOnlineURL);
-    /*
-    var HTMLonlineClasses = '<h3>Online Classes</h3>';
-var HTMLonlineTitle = '<a href="#">%data%';
-var HTMLonlineSchool = ' - %data%</a>';
-var HTMLonlineDates = '<div class="date-text">%data%</div>';
-var HTMLonlineURL = '<br><a href="#">%data%</a>';
-*/
+
  }
 }
 };
@@ -220,24 +209,9 @@ work.display();
 
 
 
-/*lickLocations = [];
 
-function logClicks(x,y) {
-  clickLocations.push(
-    {
-      x: x,
-      y: y
-    }
-  );
-  console.log('x location: ' + x + '; y location: ' + y);
-};
 
-$(document).click(function(loc) {
-  logClicks(loc.screenX, loc.screenY);
-});
-
-$("#main").append(internationalizeButton);
-
+/* Function that will change the name to an international style
 function inName(name) {
      var splitName = name.split(" ");
      var firstName = splitName[0];
@@ -247,8 +221,9 @@ function inName(name) {
      var internationalName = capFirstName + " " + capLastName;
 
      return internationalName;
-};
+}
 
 var name1 = "carl vereen";
 
-console.log(inName("carl vereen"));*/
+console.log(inName("carl vereen"));
+*/
