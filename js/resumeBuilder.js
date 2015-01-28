@@ -4,7 +4,7 @@ var bio = {
 	"contacts": {
 		"mobile": "720-270-8840",
     "email": "carlvereen@gmail.com",
-    "github": "CarlVereen",
+    "github": "Mehkai",
     "twitter": "@carlvereen",
     "blog": "Http://www.carlvereen.com",
     "location":"Denver, CO US"
@@ -38,6 +38,13 @@ var bio = {
        $('#topContacts:last').append(formattedGithub);
        //$('#topContacts:last').append(formattedBlog);
        $('#topContacts:last').append(formattedLocation);
+       //$('#topContacts').append(HTMLcontactGeneric);
+       $('#footerContacts:last').prepend(formattedMobile);
+       $('#footerContacts:last').append(formattedEmail);
+       $('#footerContacts:last').append(formattedTwitter);
+       $('#footerContacts:last').append(formattedGithub);
+       //$('#topContacts:last').append(formattedBlog);
+       $('#footerContacts:last').append(formattedLocation);
 
   },
 	"displaySkills" : function bioDisplay () {

@@ -116,7 +116,7 @@ a {
 
 /* TODO: Replace with image later */
 #header {
-  background-color: #484848;
+  background-image: url(../images/bioBackground.jpg);
 }
 
 .flex-box {
