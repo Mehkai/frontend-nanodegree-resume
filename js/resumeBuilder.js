@@ -86,14 +86,16 @@ var education = {
    "name": "Udacity",
    "date" : 2015,
    "url" : "HTTP://www.Udacity.com",
-   "classes" : ["HTML/CSS", "JavaScript"]
+   "classes" : ["HTML/CSS", "JavaScript"],
+   "details" : "This course taught front end tools including HTML, CSS and JavaScript. Additionally I had to complete high quality projects that were graded on a rubric"
   },
   {
    "title" : "Front End Web Development",
    "name": "Tree House Island",
    "date" : 2015,
    "url" : "HTTP://www.teamtreehouse.com",
-   "classes" : ["Front End Web Development", "IOS Development", "PHP", "JavaScript"]
+   "classes" : ["Front End Web Development", "IOS Development", "PHP", "JavaScript"],
+   "details" : "This course took me from beginnig to end of all the skills used in Front End Web Development. Coursework was completed through project style learning."
   }
  ],
  "displaySchool" : function educationSchoolDisplay() {
@@ -119,7 +121,9 @@ var education = {
     var formattedOnlineSchool = HTMLonlineSchool.replace("%data%",education.onlineCourses[courses].name);
     var formattedOnlineDates= HTMLonlineDates.replace("%data%",education.onlineCourses[courses].date);
     var formattedOnlineURL = HTMLonlineURL.replace("%data%",education.onlineCourses[courses].url);
-    var formattedTitleSchool = formattedOnlineTitle + formattedOnlineSchool;
+    var formattedSubjectDetails = HTMLonlineSubjectDetails.replace("%data%",education.onlineCourses[courses].details);
+    var formattedTitleSchool = formattedOnlineTitle + formattedOnlineSchool + formattedSubjectDetails;
+    
     $('.education-entry:last').append(HTMLonlineClasses);
     $('.education-entry:last').append(formattedTitleSchool);
     $('.education-entry:last').append(formattedOnlineDates);
