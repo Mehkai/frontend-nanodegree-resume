@@ -107,7 +107,8 @@ function initializeMap() {
   var locations;
 
   var mapOptions = {
-    disableDefaultUI: true
+    disableDefaultUI: true,
+    
   };
 
   // This next line makes `map` a new Google Map JavaScript Object and attaches it to
@@ -144,6 +145,19 @@ function initializeMap() {
     return locations;
   }
 
+  var info;
+
+  function locationInfo(name) {
+      var infoLocations = {
+        "Denver" : "I live here and work at Sprint",
+        "Flagstaff": "I finished School here at NAU, and worked for Apartmentlife",
+        "Tucson": "I started my career here, and started my education at the U of A"
+      };
+       info = infoLocations["name"];
+       console.log(info);
+
+      return info;
+    }
   /*
   createMapMarker(placeData) reads Google Places search results to create map pins.
   placeData is the object returned from search results containing information
@@ -154,27 +168,49 @@ function initializeMap() {
     // The next lines save location data from the search result object to local variables
     var lat = placeData.geometry.location.lat();  // latitude from the place service
     var lon = placeData.geometry.location.lng();  // longitude from the place service
-    var name = placeData.formatted_address;   // name of the place from the place service
+    var name = placeData.name;   // name of the place from the place service
     var bounds = window.mapBounds;            // current boundaries of the map window
     
-
     // marker is an object with additional data about the pin for a single location
     var marker = new google.maps.Marker({
       map: map,
       position: placeData.geometry.location,
-      title: name
+      title: name,
+      info: {
+        "Denver" : "I live here and work at Sprint",
+        "Flagstaff": "I finished School here at NAU, and worked for Apartmentlife",
+        "Tucson": "I started my career here, and started my education at the U of A"
+        }
     });
+
+    //var info;
+
+    var carl = {
+       "Denver" : "I live here and work at Sprint",
+        "Flagstaff": "I finished School here at NAU, and worked for Apartmentlife",
+        "Tucson": "I started my career here, and started my education at the U of A"
+    };
 
     // infoWindows are the little helper windows that open when you click
     // or hover over a pin on a map. They usually contain more information
     // about a location.
     var infoWindow = new google.maps.InfoWindow({
-      content: name
+     content: marker.info[name]
     });
 
     // hmmmm, I wonder what this is about...
+    //google.maps.event.addListener(marker, 'click', function() {
+    // infoWindow.open(map, marker);
+    //});
+
     google.maps.event.addListener(marker, 'click', function() {
-      infoWindow.open(map, marker);
+     
+    map.setZoom(8);
+    map.setCenter(marker.getPosition());
+    console.log(name);
+    infoWindow.open(map, marker);
+   
+    console.log(marker.info);
     });
 
     // this is where the pin actually gets added to the map.
@@ -232,6 +268,8 @@ function initializeMap() {
   pinPoster(locations);
 
 }
+
+
 
 /*
 Uncomment the code below when you're ready to implement a Google Map!
